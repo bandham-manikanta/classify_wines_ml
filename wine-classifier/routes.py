@@ -28,6 +28,10 @@ def classify_wine():
         'proline': form['proline']
     }
     data = np.asarray([list(input_data.values())])
-    pred_result = model.predict(data)
-    print("************",pred_result)
-    return render_template('result.html', result=pred_result[0])
+    result = model.predict(data)[0]
+    return jsonify({'result': str(result)})
+
+
+@app.route('/data', methods=['GET'])
+def data_page():
+    return render_template('result.html')
