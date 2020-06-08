@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br />
+<div class="container">
+    <h1 class="d-flex justify-content-center mb-4">❤️ Wine Classifier ❤️</h1>
+    <form action="/predict" method="POST">
+        <div class="form-group">
+            <small class="form-text text-muted">Enter the following details and submit to classify wines:</small>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                {{form.alcohol.label(class="form-control-label",for="alcohol")}}
+                {{form.alcohol(class="form-control",placeholder="Enter Alcohol",id="alcohol")}}
+            </div>
+            <div class="form-group col-md-4">
+                {{form.alcalinity_of_ash.label(class="form-control-label",for="alcalinity_of_ash")}}
+                {{form.alcalinity_of_ash(class="form-control",placeholder="Enter Alcalinity of ash",id="alcalinity_of_ash")}}
+            </div>
+            <div class="form-group col-md-4">
+                {{form.total_phenols.label(class="form-control-label",for="total_phenols")}}
+                {{form.total_phenols(class="form-control",placeholder="Enter Total phenols",id="total_phenols")}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                {{form.flavanoids.label(class="form-control-label",for="flavanoids")}}
+                {{form.flavanoids(class="form-control",placeholder="Enter Flavanoids",id="flavanoids")}}
+            </div>
+            <div class="form-group col-md-4">
+                {{form.nonflavanoid_phenols.label(class="form-control-label",for="nonflavanoid_phenols")}}
+                {{form.nonflavanoid_phenols(class="form-control",placeholder="Enter Non-flavanoid phenols",id="nonflavanoid_phenols")}}
+            </div>
+            <div class="form-group col-md-4">
+                {{form.proanthocyanins.label(class="form-control-label",for="proanthocyanins")}}
+                {{form.proanthocyanins(class="form-control",placeholder="Enter Proanthocyanins",id="proanthocyanins")}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                {{form.color_intensity.label(class="form-control-label",for="color_intensity")}}
+                {{form.color_intensity(class="form-control",placeholder="Enter Color intensity",id="color_intensity")}}
+            </div>
+            <div class="form-group col-md-4">
+                {{form.od280_od315_of_diluted_wines.label(class="form-control-label",for="od280_od315_of_diluted_wines")}}
+                {{form.od280_od315_of_diluted_wines(class="form-control",placeholder="Enter OD280/OD315 of diluted wines",id="od280_od315_of_diluted_wines")}}
+            </div>
+            <div class="form-group col-md-4">
+                {{form.proline.label(class="form-control-label",for="proline")}}
+                {{form.proline(class="form-control",placeholder="Enter Proline",id="proline")}}
+            </div>
+        </div>
+        <div class="form-group">
+            {{form.submit(class="btn btn-primary mx-auto d-block",type="submit",id="btn_submit")}}
+        </div>
+    </form>
+</div>
+{% endblock %}

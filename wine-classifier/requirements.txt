@@ -1,0 +1,6 @@
+flask
+gunicorn
+numpy
+Flask-WTF
+sklearn
+xgboost
