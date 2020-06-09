@@ -5,7 +5,7 @@
 
 <div class="pos-f-t">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Wine Classifier</a>
+        <a class="navbar-brand" href="/">Wine Classifier</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -14,13 +14,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/data">Link</a>
+                    <a class="nav-link" href="/data">Data</a>
                 </li>
             </ul>
-            <a class="nav-link my-2 my-lg-0" href="https://github.com/bandhammanikanta/classify_wines_ml/tree/master/wine-classifier">GITHUB</a>
+            <a class="nav-link my-2 my-lg-0"
+                href="https://github.com/bandhammanikanta/classify_wines_ml/tree/master/wine-classifier">GITHUB</a>
         </div>
     </nav>
 
@@ -98,11 +96,46 @@
                 type:'POST',
                 url:'/predict',
             }).done(function(data) {
-                $('#successAlert').text(data.result).show();
+                $('#successAlert').text('Result: '+data.result).show();
             });
             event.preventDefault();
         });
     });
 </script>
+    <div class="card">
+        <div class="card-header">
+            About: Wine recognition dataset
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Data Set Characteristics:</h5>
+            <pre class="card-text">
+This is a copy of UCI ML Wine recognition datasets.
+https://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data
+The data is the results of a chemical analysis of wines grown in the same region in Italy by three different cultivators. 
+There are thirteen different measurements taken for different constituents found in the three types of wine.
+
+<b>Original Owners:</b>
+    Forina, M. et al, PARVUS - 
+    An Extendible Package for Data Exploration, Classification and Correlation.
+    Institute of Pharmaceutical and Food Analysis and Technologies,
+    Via Brigata Salerno, 16147 Genoa, Italy.
+<b>Attribute Information:</b>
+    - Alcohol
+	- Alcalinity of ash  
+	- Total phenols
+ 	- Flavanoids
+ 	- Nonflavanoid phenols
+ 	- Proanthocyanins
+	- Color intensity
+ 	- OD280/OD315 of diluted wines
+ 	- Proline
+<b>target:</b>
+    - 0
+    - 1
+    - 2
+<b>https://scikit-learn.org/stable/datasets/index.html#wine-recognition-dataset</b>
+</pre>
+        </div>
+    </div>
 </div>
 {% endblock %}

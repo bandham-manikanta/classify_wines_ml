@@ -2,5 +2,6 @@ flask
 gunicorn
 numpy
 Flask-WTF
-sklearn
+sklearn==0.22.1
 xgboost
+pandas

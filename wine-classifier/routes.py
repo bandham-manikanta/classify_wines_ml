@@ -3,9 +3,11 @@ from flask import current_app as app
 import pickle as pkl
 import numpy as np
 from CustomForm import CustomForm
+import pandas as pd
+from utils import get_sample_data
 
 model = pkl.load(open('wine_clssifier.pkl', 'rb'))
-
+temp_df = get_sample_data()
 
 @app.route('/', methods=['GET'])
 def main_page():
@@ -34,4 +36,5 @@ def classify_wine():
 
 @app.route('/data', methods=['GET'])
 def data_page():
-    return render_template('result.html')
+    # return render_template('result.html',  tables=[df.to_html(classes='data')], titles=df.columns.values)
+    return temp_df.to_html(header="true", table_id="table")
