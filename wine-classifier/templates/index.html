@@ -1,83 +1,84 @@
 {% extends "base.html" %}
 
 {% block content %}
-<br />
 
-<div class="pos-f-t">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Wine Classifier</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand font-weight-bold" href="/">Wine Classifier</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/data">Data</a>
-                </li>
-            </ul>
-            <a class="nav-link my-2 my-lg-0"
-                href="https://github.com/bandhammanikanta/classify_wines_ml">GITHUB</a>
-        </div>
-    </nav>
-
-    <div class="container-fluid">
-        <h1 class="d-flex justify-content-center mb-4">Wine Classifier</h1>
-        <form name="customForm" method="POST">
-            <div class="form-group">
-                <small class="form-text text-muted">Enter the following details and submit to classify wines:</small>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-4">
-                    {{form.alcohol.label(class="form-control-label",for="alcohol")}}
-                    {{form.alcohol(class="form-control",placeholder="Enter Alcohol",id="alcohol")}}
-                </div>
-                <div class="form-group col-md-4">
-                    {{form.alcalinity_of_ash.label(class="form-control-label",for="alcalinity_of_ash")}}
-                    {{form.alcalinity_of_ash(class="form-control",placeholder="Enter Alcalinity of ash",id="alcalinity_of_ash")}}
-                </div>
-                <div class="form-group col-md-4">
-                    {{form.total_phenols.label(class="form-control-label",for="total_phenols")}}
-                    {{form.total_phenols(class="form-control",placeholder="Enter Total phenols",id="total_phenols")}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-4">
-                    {{form.flavanoids.label(class="form-control-label",for="flavanoids")}}
-                    {{form.flavanoids(class="form-control",placeholder="Enter Flavanoids",id="flavanoids")}}
-                </div>
-                <div class="form-group col-md-4">
-                    {{form.nonflavanoid_phenols.label(class="form-control-label",for="nonflavanoid_phenols")}}
-                    {{form.nonflavanoid_phenols(class="form-control",placeholder="Enter Non-flavanoid phenols",id="nonflavanoid_phenols")}}
-                </div>
-                <div class="form-group col-md-4">
-                    {{form.proanthocyanins.label(class="form-control-label",for="proanthocyanins")}}
-                    {{form.proanthocyanins(class="form-control",placeholder="Enter Proanthocyanins",id="proanthocyanins")}}
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-4">
-                    {{form.color_intensity.label(class="form-control-label",for="color_intensity")}}
-                    {{form.color_intensity(class="form-control",placeholder="Enter Color intensity",id="color_intensity")}}
-                </div>
-                <div class="form-group col-md-4">
-                    {{form.od280_od315_of_diluted_wines.label(class="form-control-label",for="od280_od315_of_diluted_wines")}}
-                    {{form.od280_od315_of_diluted_wines(class="form-control",placeholder="Enter OD280/OD315 of diluted wines",id="od280_od315_of_diluted_wines")}}
-                </div>
-                <div class="form-group col-md-4">
-                    {{form.proline.label(class="form-control-label",for="proline")}}
-                    {{form.proline(class="form-control",placeholder="Enter Proline",id="proline")}}
-                </div>
-            </div>
-            <div class="form-group">
-                {{form.submit(class="btn btn-primary mx-auto d-block",type="submit",id="btn_submit")}}
-            </div>
-        </form>
-        <br />
-        <div id="successAlert" class="alert alert-success" role="alert" style="display:none;"></div>
+    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/data">Data</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item active">
+                <a href="https://github.com/bandhammanikanta/classify_wines_ml" class="nav-link">GITHUB</a>
+            </li>
+        </ul>
     </div>
-    <script type=text/javascript>
+</nav>
+
+<div class="container-fluid">
+    <h1 class="d-flex justify-content-center mb-4">Wine Classifier</h1>
+    <form name="customForm" method="POST">
+        <div class="form-group">
+            <small class="form-text text-muted">Enter the following details and submit to classify wines:</small>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                {{form.alcohol.label(class="form-control-label",for="alcohol")}}
+                {{form.alcohol(class="form-control",placeholder="Enter Alcohol",id="alcohol")}}
+            </div>
+            <div class="form-group col-md-4">
+                {{form.alcalinity_of_ash.label(class="form-control-label",for="alcalinity_of_ash")}}
+                {{form.alcalinity_of_ash(class="form-control",placeholder="Enter Alcalinity of ash",id="alcalinity_of_ash")}}
+            </div>
+            <div class="form-group col-md-4">
+                {{form.total_phenols.label(class="form-control-label",for="total_phenols")}}
+                {{form.total_phenols(class="form-control",placeholder="Enter Total phenols",id="total_phenols")}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                {{form.flavanoids.label(class="form-control-label",for="flavanoids")}}
+                {{form.flavanoids(class="form-control",placeholder="Enter Flavanoids",id="flavanoids")}}
+            </div>
+            <div class="form-group col-md-4">
+                {{form.nonflavanoid_phenols.label(class="form-control-label",for="nonflavanoid_phenols")}}
+                {{form.nonflavanoid_phenols(class="form-control",placeholder="Enter Non-flavanoid phenols",id="nonflavanoid_phenols")}}
+            </div>
+            <div class="form-group col-md-4">
+                {{form.proanthocyanins.label(class="form-control-label",for="proanthocyanins")}}
+                {{form.proanthocyanins(class="form-control",placeholder="Enter Proanthocyanins",id="proanthocyanins")}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                {{form.color_intensity.label(class="form-control-label",for="color_intensity")}}
+                {{form.color_intensity(class="form-control",placeholder="Enter Color intensity",id="color_intensity")}}
+            </div>
+            <div class="form-group col-md-4">
+                {{form.od280_od315_of_diluted_wines.label(class="form-control-label",for="od280_od315_of_diluted_wines")}}
+                {{form.od280_od315_of_diluted_wines(class="form-control",placeholder="Enter OD280/OD315 of diluted wines",id="od280_od315_of_diluted_wines")}}
+            </div>
+            <div class="form-group col-md-4">
+                {{form.proline.label(class="form-control-label",for="proline")}}
+                {{form.proline(class="form-control",placeholder="Enter Proline",id="proline")}}
+            </div>
+        </div>
+        <div class="form-group">
+            {{form.submit(class="btn btn-primary mx-auto d-block",type="submit",id="btn_submit")}}
+        </div>
+    </form>
+    <br />
+    <div id="successAlert" class="alert alert-success" role="alert" style="display:none;"></div>
+</div>
+<script type=text/javascript>
     $(document).ready(function() {
         $('form').on('submit', function(event) {
             var data = {
@@ -102,13 +103,13 @@
         });
     });
 </script>
-    <div class="card">
-        <div class="card-header">
-            About: Wine recognition dataset
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Data Set Characteristics:</h5>
-            <pre class="card-text">
+<div class="card">
+    <div class="card-header">
+        About: Wine recognition dataset
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Data Set Characteristics:</h5>
+        <pre class="card-text">
 <b>Model used: XGBoost</b>
 
 This is a copy of UCI ML Wine recognition datasets.
@@ -127,7 +128,6 @@ There are thirteen different measurements taken for different constituents found
     - 2
 <b>https://scikit-learn.org/stable/datasets/index.html#wine-recognition-dataset</b>
 </pre>
-        </div>
     </div>
 </div>
 {% endblock %}
