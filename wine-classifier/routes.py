@@ -39,4 +39,4 @@ def classify_wine():
 def data_page():
     # return render_template('result.html',  tables=[df.to_html(classes='data')], titles=df.columns.values)
     # return temp_df.to_html(header="true", table_id="table")
-    return render_template("data.html", data=temp_df.to_html().replace('<table border="1" class="dataframe">', '<table border="1" class="table">'))
+    return render_template("data.html", data=temp_df.to_html().replace('<table border="1" class="dataframe">', '<table border="1" class="table-sm table-striped table-responsive">'))
