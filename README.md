@@ -1,4 +1,3 @@
 ### Classify wines & Hyper parameter tuning for a better model.
 
-Hosted at
-https://wine-classifier.herokuapp.com/
+To see the deployed vision, browse to https://wine-classifier.herokuapp.com/
