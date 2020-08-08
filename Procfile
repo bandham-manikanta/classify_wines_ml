@@ -1,1 +1,1 @@
-web: gunicorn app:wine-classfier/app
+web: gunicorn wine-classfier.app:app
