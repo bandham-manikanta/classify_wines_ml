@@ -9,6 +9,7 @@ from utils import get_sample_data
 model = pkl.load(open('wine_clssifier.pkl', 'rb'))
 temp_df = get_sample_data()
 
+
 @app.route('/', methods=['GET'])
 def main_page():
     form = CustomForm()
@@ -37,4 +38,5 @@ def classify_wine():
 @app.route('/data', methods=['GET'])
 def data_page():
     # return render_template('result.html',  tables=[df.to_html(classes='data')], titles=df.columns.values)
-    return temp_df.to_html(header="true", table_id="table")
+    # return temp_df.to_html(header="true", table_id="table")
+    return render_template("data.html", data=temp_df.to_html().replace('<table border="1" class="dataframe">', '<table border="1" class="table">'))

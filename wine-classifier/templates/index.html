@@ -1,28 +1,10 @@
 {% extends "base.html" %}
 
-{% block content %}
+<!-- {% block title %}
+Index
+{% endblock %} -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand font-weight-bold" href="/">Wine Classifier</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/data">Data</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav navbar-right">
-            <li class="nav-item active">
-                <a href="https://github.com/bandhammanikanta/classify_wines_ml" class="nav-link">GITHUB</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
+{% block main %}
 <div class="container-fluid">
     <h1 class="d-flex justify-content-center mb-4">Wine Classifier</h1>
     <form name="customForm" method="POST">
@@ -97,7 +79,7 @@
                 type:'POST',
                 url:'/predict',
             }).done(function(data) {
-                $('#successAlert').text('Result: '+data.result).show();
+                $('#successAlert').text('Result: '+ data.result).show();
             });
             event.preventDefault();
         });
