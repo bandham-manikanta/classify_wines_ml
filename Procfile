@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath wine-classfier app.app
+web: gunicorn --chdir wine-classfier app:app
